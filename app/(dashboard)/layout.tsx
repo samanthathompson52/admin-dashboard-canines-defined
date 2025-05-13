@@ -10,6 +10,22 @@ import {
   Users2
 } from 'lucide-react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { 
+  faHouse, 
+  faUsers, 
+  faDog,  
+  faVideo
+} from '@fortawesome/free-solid-svg-icons'
+
+library.add(
+  faHouse, 
+  faUsers,
+  faDog,
+  faVideo
+);
+
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -70,12 +86,12 @@ function DesktopNav() {
           <span className="sr-only">Acme Inc</span>
         </Link>
 
-        <NavItem href="#" label="Dashboard">
-          <Home className="h-5 w-5" />
+        <NavItem href="/admin" label="Dashboard">
+          <FontAwesomeIcon icon={faHouse} className="h-5 w-5" />
         </NavItem>
 
-        <NavItem href="#" label="Orders">
-          <ShoppingCart className="h-5 w-5" />
+        <NavItem href="/dogs" label="Dogs">
+          <FontAwesomeIcon icon={faDog} className="h-5 w-5" />
         </NavItem>
 
         <NavItem href="/" label="Products">
@@ -83,11 +99,7 @@ function DesktopNav() {
         </NavItem>
 
         <NavItem href="/customers" label="Customers">
-          <Users2 className="h-5 w-5" />
-        </NavItem>
-
-        <NavItem href="#" label="Analytics">
-          <LineChart className="h-5 w-5" />
+          <FontAwesomeIcon icon={faUsers} className="h-5 w-5" />
         </NavItem>
       </nav>
       <nav className="mt-auto flex flex-col items-center gap-4 px-2 sm:py-5">
